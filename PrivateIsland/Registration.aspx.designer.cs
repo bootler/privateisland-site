@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace COMP228_GroupProject_PrivateIsland {
+namespace PrivateIsland {
     
     
     public partial class Registration {

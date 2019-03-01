@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrivateIslands.master.cs" Inherits="COMP228_GroupProject_PrivateIsland.PrivateIslands" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrivateIslands.master.cs" Inherits="PrivateIsland.PrivateIslands" %>
 
 <!DOCTYPE html>
 

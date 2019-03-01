@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace COMP228_GroupProject_PrivateIsland
+namespace PrivateIsland
 {
     public class DummyCustomer
     {

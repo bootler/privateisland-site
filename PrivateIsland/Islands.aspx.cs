@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
-namespace COMP228_GroupProject_PrivateIsland
+namespace PrivateIsland
 {
     public partial class Islands : System.Web.UI.Page
     {

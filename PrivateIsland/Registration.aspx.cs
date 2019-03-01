@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 
-namespace COMP228_GroupProject_PrivateIsland
+namespace PrivateIsland
 {
     
     public partial class Registration : System.Web.UI.Page

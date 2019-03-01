@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrivateIslands.master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="COMP228_GroupProject_PrivateIsland.ContactUs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrivateIslands.master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="PrivateIsland.ContactUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="App_Themes/ContactPage.css" rel="stylesheet" />
 </asp:Content>

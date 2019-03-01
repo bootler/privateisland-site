@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace COMP228_GroupProject_PrivateIsland
+namespace PrivateIsland
 {
     public partial class ContactUs : System.Web.UI.Page
     {

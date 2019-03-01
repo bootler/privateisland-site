@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.OleDb;
 
-namespace COMP228_GroupProject_PrivateIsland
+namespace PrivateIsland
 {
     public partial class SampleForm : System.Web.UI.Page
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrivateIslands.master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="COMP228_GroupProject_PrivateIsland.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrivateIslands.master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="PrivateIsland.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="App_Themes/CartPage.css" />
 </asp:Content>

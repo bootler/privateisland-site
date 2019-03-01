@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Data.OleDb;
 
-namespace COMP228_GroupProject_PrivateIsland
+namespace PrivateIsland
 {
     public static class ConnectionClass
     {
@@ -178,7 +178,8 @@ namespace COMP228_GroupProject_PrivateIsland
         {
             string query = string.Format(@"insert into contactus values(NEXT VALUE FOR CountBy1,'{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
                 info.FirstName, info.LastName, info.Phone, info.Email, info.TypeInquiry, info.PerferedMethodContact, info.Message);
-            cmd = new SqlCommand(query, cn);
+            OleDbConnection cn = new OleDbConnection(cs);
+            OleDbCommand cmd = new OleDbCommand(query, cn);
             try
             {
                 cn.Open();
