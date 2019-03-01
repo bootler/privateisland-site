@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="App_Themes/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="App_Themes/carousel.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
 
     <%--for any additional page specific stylesheets --%>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -38,13 +39,14 @@
                <ul class="nav navbar-nav navbar-right">
                 <li><asp:Label ID="Label1" runat="server" Text="This shows whether the user is logged out or logged in (change)." CssClass="asp-menu-label"></asp:Label></li> 
                </ul>
-                <asp:Menu ID="navMenu" runat="server" CssClass="nav navbar-nav" Orientation="Horizontal">
+                <asp:Menu ID="navMenu" runat="server" CssClass="nav navbar-nav" OnMenuItemClick="MenuItem_Clicked" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem Selected="True" Text="Islands" Value="Islands"></asp:MenuItem>
-                        <asp:MenuItem Text="Your Picks" Value="Your Picks"></asp:MenuItem>
-                        <asp:MenuItem Text="About" Value="About"></asp:MenuItem>
-                        <asp:MenuItem Text="Contact" Value="Contact"></asp:MenuItem>
-                        <asp:MenuItem Text="Register" Value="Register"></asp:MenuItem>
+                        <asp:MenuItem Selected="True" Text="Islands" Value="Islands" NavigateUrl="~/Islands.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="My Cart" Value="My Cart" NavigateUrl="~/Cart.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="About" Value="About" NavigateUrl="~/About.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Contact" Value="Contact" NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Register" Value="Register" NavigateUrl="~/Registration.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="" Value=" " Enabled="True"></asp:MenuItem>
                     </Items>
                     <StaticMenuItemStyle CssClass="asp-menu-item" HorizontalPadding="15px" VerticalPadding="15px" />
               </asp:Menu>
@@ -67,7 +69,7 @@
           <img class="first-slide" src="https://wallpaper-house.com/data/out/12/wallpaper2you_581793.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Private Island Emporium</h1>
+              <h1 style="font-family:'Pacifico',cursive;">Private Island Emporium</h1>
               <p>The very best in private islands you can find anywhere. A curated collection of tropical paradises at the most affordable prices.</p>
             </div>
           </div>
@@ -76,7 +78,7 @@
           <img class="second-slide" src="https://wallpaper-house.com/data/out/12/wallpaper2you_581848.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-             <h1>Private Island Emporium</h1>
+              <h1 style="font-family:'Pacifico',cursive;">Private Island Emporium</h1>
               <p>The very best in private islands you can find anywhere. A curated collection of tropical paradises at the most affordable prices.</p>
             </div>
           </div>
@@ -85,7 +87,7 @@
           <img class="third-slide" src="http://interfacelift.com/wallpaper/previews/03838_pelicanislandsunset_672x420.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Private Island Emporium</h1>
+               <h1 style="font-family:'Pacifico',cursive;">Private Island Emporium</h1>
               <p>The very best in private islands you can find anywhere. A curated collection of tropical paradises at the most affordable prices.</p>
             </div>
           </div>

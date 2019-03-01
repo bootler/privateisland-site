@@ -1,18 +1,18 @@
 ﻿#pageTitle{
     
     text-align: center;
-    
+    font-family: 'Pacifico',cursive;
     color: #222;
-    text-decoration: underline;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 #container 
 {
     padding: 15px 15px 15px 15px; 
     margin-bottom: 30px;
-    border: 2px solid; 
-    border-radius: 4px;
+    border: 8px solid; 
+    border-radius: 10px;
     background-color:#FFF;
 }
 
@@ -44,18 +44,17 @@ h4
     color: firebrick;
 }
 
-#summary
+.summary
 {
-    position: fixed;
     background-color: #222;
 }
 
-#summary > h2
+.summary > h2
 {
     color: white;
 }
 
-#summary > div > div > p
+.summary > div > div > p
 {
     color: white;
 }
@@ -63,4 +62,26 @@ h4
 .details
 {
     background-color: #EEEEEE;
+}
+
+.row > div > ul > li 
+{
+    margin-bottom: 8px;
+}
+
+.btn-cart-special
+{
+    margin-bottom: 10px;
+}
+
+.loc-bullet {
+    list-style-image: url('https://i.imgur.com/QY0JIEN.png') !important;
+}
+
+.size-bullet {
+    list-style-image: url('https://i.imgur.com/wqh92lc.png') !important;
+}
+
+.money-bullet {
+    list-style-image: url('https://i.imgur.com/yu3WpPA.png');
 }

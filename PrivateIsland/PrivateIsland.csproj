@@ -67,9 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="About.aspx" />
     <Content Include="App_Data\PrivateIslandsDB.mdb" />
     <Content Include="App_Themes\CartPage.css" />
     <Content Include="App_Themes\ContactPage.css" />
+    <Content Include="App_Themes\IslandPage.css" />
     <Content Include="App_Themes\IslandsPage.css" />
     <Content Include="Cart.aspx" />
     <Content Include="ContactUs.aspx" />
@@ -92,6 +94,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +117,7 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs" />
     <Compile Include="DummyCustomer.cs" />
     <Compile Include="info.cs" />
     <Compile Include="Island.cs" />

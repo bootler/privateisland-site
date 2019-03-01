@@ -99,12 +99,5 @@
                     <asp:Button ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" class="btn"/>
                     <br />
                 </div>
-              
-                    <asp:TableRow ID="Table1" runat="server"></asp:TableRow>
-                   <tr>
-                <td>Name</td>
-                <td>Task</td>
-                <td>Hours</td>
-            </tr>
 
     </asp:Content>
