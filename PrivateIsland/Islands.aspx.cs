@@ -15,7 +15,7 @@ namespace PrivateIsland
         protected void Page_Load(object sender, EventArgs e)
         {
             //replacement for pending work - remove when user page is done.
-            //Session["ActiveUser"] = new DummyCustomer(1);
+            Session["ActiveUser"] = new DummyCustomer(1);
 
             if (ConnectionClass.HasActiveOrder((DummyCustomer)Session["ActiveUser"]))
             {
