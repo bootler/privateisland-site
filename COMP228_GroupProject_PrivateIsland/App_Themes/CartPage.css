@@ -1,0 +1,66 @@
+﻿#pageTitle{
+    
+    text-align: center;
+    
+    color: #222;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#container 
+{
+    padding: 15px 15px 15px 15px; 
+    margin-bottom: 30px;
+    border: 2px solid; 
+    border-radius: 4px;
+    background-color:#FFF;
+}
+
+#items {
+    
+    background-color:#EEEEEE; 
+    padding-top:15px; 
+    padding-bottom:15px;
+    padding-left: 5px;
+    margin-top: 0px !important;
+    margin-right: -15px;
+}
+
+.preview {
+    
+    height: 200px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+hr
+{
+    height: 1px;
+    background-color: #000;
+}
+
+h4
+{
+    color: firebrick;
+}
+
+#summary
+{
+    position: fixed;
+    background-color: #222;
+}
+
+#summary > h2
+{
+    color: white;
+}
+
+#summary > div > div > p
+{
+    color: white;
+}
+
+.details
+{
+    background-color: #EEEEEE;
+}
