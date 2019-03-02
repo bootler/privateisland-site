@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrivateIslands.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PrivateIsland.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
         <div id="cont" runat="server">
             <div>
              User Name:<asp:TextBox ID="UserNametxtbox" runat="server"></asp:TextBox>

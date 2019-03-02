@@ -3,7 +3,7 @@
     <link href="App_Themes/ContactPage.css" rel="stylesheet" />
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
      <div>
             <br />
             Please complete the form below, choosing the category that best describes the nature of your inquiry. You will be contacted by our staff as soon as possible. Or send to <a href="mailto:csun28@my.centennialcollege.ca">csun28@my.centennialcollege.ca</a><br />
