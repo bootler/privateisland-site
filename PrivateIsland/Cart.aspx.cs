@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
@@ -11,16 +8,16 @@ namespace PrivateIsland
     public partial class Cart : System.Web.UI.Page
     {
         List<CartItem> cartItems;
-        bool flag;
-        bool noitems;
+        bool loggedOut;
+        bool noItems;
         int count;
         long total;
         long taxes;
         Order o;
         protected void Page_Load(object sender, EventArgs e)
         {
-            flag = false;
-            noitems = false;
+            loggedOut = false;
+            noItems = false;
             total = 0;
 
             Label menuLabel;
@@ -29,7 +26,7 @@ namespace PrivateIsland
                 Customer c = (Customer)Session["ActiveUser"];
                 o = (Order)Session["ActiveOrder"];
                 cartItems = ConnectionClass.getCartItems(o);
-                if (cartItems.Count == 0) noitems = true;
+                if (cartItems.Count == 0) noItems = true;
                 count = cartItems.Count;
 
                 menuLabel = (Label)Master.FindControl("Label1");
@@ -37,7 +34,7 @@ namespace PrivateIsland
             }
             else
             {
-                flag = true;
+                loggedOut = true;
                 menuLabel = (Label)Master.FindControl("Label1");
                 menuLabel.Text = string.Format("Welcome! Please login");
             }
@@ -77,7 +74,7 @@ namespace PrivateIsland
 
         protected void GenerateContent()
         {
-            if (!flag && !noitems)
+            if (!loggedOut && !noItems)
             {
                 foreach (CartItem item in cartItems)
                 {
@@ -164,7 +161,7 @@ namespace PrivateIsland
                 summary.Visible = false;
                 HtmlGenericControl h1 = new HtmlGenericControl("h1");
                 HtmlGenericControl h3 = new HtmlGenericControl("h3");
-                if (flag)
+                if (loggedOut)
                 {
                     Response.Redirect("~/Login.aspx");
                     return;
