@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PrivateIsland
 {
@@ -18,8 +13,6 @@ namespace PrivateIsland
         {
             try
             {
-
-
                 string nameSaveBTN = TextBoxName.Text;
                 string lastNameSaveBTN = TextBoxLastName.Text;
                 string phoneNumberSaveBTN = TextBoxPhone.Text;
