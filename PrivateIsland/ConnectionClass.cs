@@ -10,13 +10,13 @@ namespace PrivateIsland
     public static class ConnectionClass
     {
         private static string path = HttpRuntime.AppDomainAppPath;
-        private static string cs = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path + @"\App_Data\PrivateIslandsDB.mdb";
+        private static string connString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path + @"\App_Data\PrivateIslandsDB.mdb";
 
         //adds a cart item to the specified shopping cart
         public static void addCartItem(int island_id, int order_id)
         {
             string query = string.Format("INSERT INTO CartItems (island_id,order_id) VALUES ({0},{1})", island_id, order_id);
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -33,7 +33,7 @@ namespace PrivateIsland
         public static void addCustomer(Customer newCust)
         {
             string query = string.Format("INSERT INTO Customers (firstname,lastname,dob,email,phone) VALUES ('{0}','{1}','{2}','{3}','{4}')", newCust.FirstName, newCust.LastName, newCust.DateOfBirth, newCust.Email, newCust.Phone);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -47,7 +47,7 @@ namespace PrivateIsland
 
             string query = string.Format(@"INSERT INTO ContactUs (firstname,lastname,phone,email,type_inquiry,pref_ctact_method,message) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
                 info.FirstName, info.LastName, info.Phone, info.Email, info.TypeInquiry, info.PerferedMethodContact, info.Message);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -59,7 +59,7 @@ namespace PrivateIsland
         public static void addLoginInfo(int cust_id, string user, string ph)
         {
             string query = string.Format("INSERT INTO Logins (customer_id,username,pass_hash) VALUES ({0},'{1}','{2}')", cust_id, user, ph);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -72,7 +72,7 @@ namespace PrivateIsland
         {
             Order order = null;
             string query = string.Format("SELECT * FROM Orders WHERE customer_id = {0} AND active = True", active.ID);
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -101,7 +101,7 @@ namespace PrivateIsland
         {
             List<Island> islands = new List<Island>();
             string query = "SELECT * FROM Islands WHERE for_sale=True";
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -129,7 +129,7 @@ namespace PrivateIsland
         {
             List<CartItem> items = new List<CartItem>();
             string query = string.Format("SELECT * FROM CartItems WHERE order_id = {0}", order.ID);
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -154,7 +154,7 @@ namespace PrivateIsland
         public static bool HasCartItem(Order order, int island_id)
         {
             string query = string.Format("SELECT * FROM CartItems WHERE island_id = {0} AND order_id = {1} ", island_id, order.ID);
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -178,7 +178,7 @@ namespace PrivateIsland
         {
             Island island = null;
             string query = string.Format("SELECT * FROM Islands WHERE ID = {0}", c.IslandID);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 OleDbCommand cmd = new OleDbCommand(query, conn);
                 conn.Open();
@@ -199,7 +199,7 @@ namespace PrivateIsland
         public static Customer getCustomer(int id)
         {
             string query = string.Format("SELECT * FROM Customers WHERE ID = {0}", id);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 Customer cust = null;
                 conn.Open();
@@ -220,7 +220,7 @@ namespace PrivateIsland
         {
             Customer cust;
             string query = string.Format("SELECT customer_id FROM Logins WHERE username = '{0}'", user);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 OleDbCommand cmd = new OleDbCommand(query, conn);
                 conn.Open();
@@ -236,7 +236,7 @@ namespace PrivateIsland
 
             string query = string.Format("SELECT * FROM Orders WHERE customer_id = {0} AND active = True", active.ID);
 
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 OleDbCommand cmd = new OleDbCommand(query, conn);
                 conn.Open();
@@ -253,7 +253,7 @@ namespace PrivateIsland
         public static bool LoginMatched(string user, string passHash)
         {
             string query = string.Format("SELECT customer_id FROM Logins WHERE username = '{0}' AND pass_hash = '{1}'", user, passHash);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -274,7 +274,7 @@ namespace PrivateIsland
             int cust_id;
             addCustomer(createdCust);
             string query = string.Format("SELECT Max(ID) AS newest FROM Customers");
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -288,7 +288,7 @@ namespace PrivateIsland
         public static void removeCartItem(int id)
         {
             string query = string.Format("DELETE FROM CartItems WHERE ID = {0}", id);
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -305,7 +305,7 @@ namespace PrivateIsland
         public static void removeCartItem(int island_id, int order_id)
         {
             string query = string.Format("DELETE FROM CartItems WHERE island_id = {0} AND order_id = {1}", island_id, order_id);
-            OleDbConnection conn = new OleDbConnection(cs);
+            OleDbConnection conn = new OleDbConnection(connString);
             OleDbCommand cmd = new OleDbCommand(query, conn);
             try
             {
@@ -322,7 +322,7 @@ namespace PrivateIsland
         public static void resetSoldStatus()
         {
             string query = string.Format("UPDATE Islands SET for_sale = True");
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -334,7 +334,7 @@ namespace PrivateIsland
         //an active cart, this method is called automatically to create one
         public static void setActiveOrder(Customer active)
         {
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 Order order = new Order(active.ID, 0, DateTime.Now, true);
@@ -348,7 +348,7 @@ namespace PrivateIsland
         public static void setInactiveOrder(Order order)
         {
             string query = string.Format("UPDATE Orders SET active = False WHERE ID = {0}", order.ID);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -360,7 +360,7 @@ namespace PrivateIsland
         public static void setSold(int island_id)
         {
             string query = string.Format("UPDATE Islands SET for_sale = FALSE WHERE ID = {0}", island_id);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -373,7 +373,7 @@ namespace PrivateIsland
         public static bool UsernameExists(string username)
         {
             string query = string.Format("SELECT * FROM Logins WHERE username = '{0}'", username);
-            using (OleDbConnection conn = new OleDbConnection(cs))
+            using (OleDbConnection conn = new OleDbConnection(connString))
             {
                 conn.Open();
                 OleDbCommand cmd = new OleDbCommand(query, conn);
