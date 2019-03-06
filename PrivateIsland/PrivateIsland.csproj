@@ -118,7 +118,6 @@
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
-    <Compile Include="DummyCustomer.cs" />
     <Compile Include="info.cs" />
     <Compile Include="Island.cs" />
     <Compile Include="Islands.aspx.cs">
