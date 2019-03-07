@@ -1,9 +1,4 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
 namespace PrivateIsland
 {
     public class Island
@@ -17,7 +12,7 @@ namespace PrivateIsland
         public int Price { get; set; }
         public bool ForSale { get; set; }
         
-        public Island(int id,string name,string desc,string img,string location,int acres,int price,bool truefalse)
+        public Island(int id,string name,string desc,string img,string location,int acres,int price,bool forsale)
         {
             ID = id;
             Name = name;
@@ -26,7 +21,7 @@ namespace PrivateIsland
             Location = location;
             Acres = acres;
             Price = price;
-            ForSale = truefalse;
+            ForSale = forsale;
         }
     }
 }
