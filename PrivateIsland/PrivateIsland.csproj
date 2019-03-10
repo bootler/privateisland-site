@@ -90,7 +90,6 @@
     <Content Include="App_Themes\bootstrap.css" />
     <Content Include="App_Themes\carousel.css" />
     <Content Include="Registration.aspx" />
-    <Content Include="SampleForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -149,13 +148,6 @@
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SampleForm.aspx.cs">
-      <DependentUpon>SampleForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SampleForm.aspx.designer.cs">
-      <DependentUpon>SampleForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
